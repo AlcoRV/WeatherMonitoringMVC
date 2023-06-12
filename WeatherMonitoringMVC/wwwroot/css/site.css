@@ -1,0 +1,42 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.btn_addition {
+    padding: 10px;
+    text-decoration-line: none;
+    border-radius: 10px;
+}
+
+.btn_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.tbl_custom {
+    border-spacing: 10px;
+    text-align: center;
+    width: 110%;
+    table-layout: fixed;
+}
+
+.table-separator tr {
+    border-bottom: 1px solid #000;
+}

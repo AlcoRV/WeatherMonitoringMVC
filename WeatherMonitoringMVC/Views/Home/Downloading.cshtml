@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Download page";
+}
+
+<h1>Загрузка файла</h1>
+
+<form method="post" enctype="multipart/form-data" action="/Home/UploadFile">
+    <div class="form-group">
+        <label for="fileInput">Выберите файл:</label>
+        <input type="file" class="form-control-file" id="fileInput" name="files" accept=".xls, .xlsx" multiple>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin: 20px">Загрузить</button>
+</form>
