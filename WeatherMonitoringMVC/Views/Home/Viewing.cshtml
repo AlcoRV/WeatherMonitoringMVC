@@ -1,9 +1,13 @@
 ﻿@using static WeatherMonitoringMVC.Controllers.HomeController;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Bootstrap4.Core;
+@using X.PagedList.Web.Common;
+@using WeatherMonitoringMVC.Controllers;
 @{
     ViewData["Title"] = "View page";
 }
 @model WeatherDescriptionViewModel
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 <form method="get" enctype="multipart/form-data" action="/Home/Viewing">
     <div class="form-group">
@@ -67,3 +71,12 @@
         }
     </tbody>
 </table>
+<br/>
+Страница @(Model.WeatherDescriptions.PageCount < Model.WeatherDescriptions.PageNumber ? 0 : Model.WeatherDescriptions.PageNumber) из @Model.WeatherDescriptions.PageCount
+<br />
+<tr>
+    <td colspan="4" align="center">
+        @Html.PagedListPager(Model.WeatherDescriptions, page => Url.Action("Viewing", new { Model.Month, Model.Year, page }), Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </td>
+</tr>
+
